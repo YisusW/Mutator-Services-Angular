@@ -3,6 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  ExampleEndPoint: 'https://myallies-breaking-news-v1.p.rapidapi.com',
+
   production: false
 };
 
