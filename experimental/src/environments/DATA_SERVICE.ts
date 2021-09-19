@@ -1,4 +1,4 @@
-export const Data = [
+export const Data = () => ([
   {
     NewsID: 399947,
     Company: {
@@ -1413,4 +1413,4 @@ export const Data = [
     DislikesCount: 0,
     CommentsCount: 0,
   },
-];
+]);

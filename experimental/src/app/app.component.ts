@@ -1,5 +1,5 @@
 import { NewsService } from './services/news.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TopNews } from './services/news.model';
 
 @Component({
@@ -7,21 +7,23 @@ import { TopNews } from './services/news.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
-  constructor(private newService: NewsService) {
+  constructor(private newService: NewsService) {}
+
+  ngOnInit() {
     this.callServiceWithOutMutator();
     this.callServiceWithMutator();
   }
 
   private callServiceWithOutMutator() {
-    this.newService.getTopNewsMOCK().subscribe(
+    this.newService.getTopNewsMocked().subscribe(
       (news: Array<TopNews>) => console.log(news, 'withOut')
     );
   }
 
   private callServiceWithMutator() {
-    this.newService.getTopNewsMOCKMutated().subscribe(
+    this.newService.getTopNewsMockedMutated().subscribe(
       (news: Array<TopNews>) => console.log(news, 'with')
     );
   }

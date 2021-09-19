@@ -43,7 +43,7 @@ export class NewsService {
   /**
    * @description this is a service with a mutator class implemented
    */
-  public getTopNewsMuTated(): Observable<Array<TopNews>> {
+  public getTopNewsMutated(): Observable<Array<TopNews>> {
     const url = `${this.endPoint}/GetTopNews`;
 
     return this.http
@@ -54,17 +54,17 @@ export class NewsService {
   /**
    * @description i was trying to get real data but i just return a observable with DATA_SERVICE.ts file
    */
-  public getTopNewsMOCK(): Observable<Array<TopNews>> {
-    const dataMock = new Array(...Data);
+  public getTopNewsMocked(): Observable<Array<TopNews>> {
+    const dataMock = Data();
 
-    return new Observable<Array<TopNews>>(observer => observer.next(dataMock));
+    return new Observable<Array<TopNews>>(observer => {observer.next(dataMock); observer.complete();});
   }
 
   /**
    * @description i was trying to get real data but i just return a observable with DATA_SERVICE.ts file
    */
-  public getTopNewsMOCKMutated(): Observable<Array<TopNews>> {
-    const dataMock = new Array(...Data);
+  public getTopNewsMockedMutated(): Observable<Array<TopNews>> {
+    const dataMock = Data();
 
     return new Observable<Array<TopNews>>(observer => observer.next( mutatorService(TopNewsMutator, dataMock)));
   }
