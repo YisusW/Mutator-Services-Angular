@@ -1,4 +1,4 @@
-import { TopNewsMutator } from './TopNewsMutator';
+import { TopNewsMutator } from './top-news.mutator';
 
 /**
  * @description this @type {ModelMutator} just for documentation of list of mutators classes

@@ -1,5 +1,5 @@
 import * as moment from 'moment';
-import { MutatorService } from './Mutators';
+import { MutatorService } from './mutators';
 
 /**
  * Parse the object as a moment in target timezone

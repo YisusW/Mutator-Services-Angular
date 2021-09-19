@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { TopNews } from './news.model';
 import { mutatorService } from './utilities';
-import { TopNewsMutator } from './Mutators/TopNewsMutator';
+import { TopNewsMutator } from './mutators/top-news.mutator';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
